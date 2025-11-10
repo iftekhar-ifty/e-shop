@@ -6,18 +6,19 @@ use Illuminate\Http\Request;
 use App\Services\ProductService;
 use App\Http\Controllers\Controller;
 use App\Repository\ProductRepository;
+use Inertia\Inertia;
 
 class HomePageController extends Controller
 {
-    public $productService;
+    public ProductService $productService;
 
-    public function __construct()
+    public function __construct(ProductService $productService)
     {
-        $this->productService = new ProductService(new ProductRepository());
+        $this->productService = $productService;
     }
 
     public function index()
     {
-        dd($this->productService->getProducts());
+        return inertia('HomePage');
     }
 }
