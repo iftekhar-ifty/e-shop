@@ -19,6 +19,9 @@ class HomePageController extends Controller
 
     public function index()
     {
-        return inertia('HomePage');
+        $products = $this->productService->getProducts();
+        return inertia('HomePage',[
+            'productList' => $products,
+        ]);
     }
 }
