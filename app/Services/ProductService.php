@@ -6,6 +6,7 @@ use App\Repository\ProductRepository;
 class ProductService
 {
     public ProductRepository $productRepository;
+    
     public function __construct(ProductRepository $productRepository)
     {
         $this->productRepository = $productRepository;
@@ -18,5 +19,5 @@ class ProductService
     {
         return $this->productRepository->product();
     }
-    
+
 }

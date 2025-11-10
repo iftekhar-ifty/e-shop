@@ -6,13 +6,13 @@ use App\Models\Product;
 
 class ProductRepository implements ProductInterface
 {
-        public function getProducts(): array
-        {
-            return Product::all()->toArray();
-        }
+    public function getProducts(): array
+    {
+        return Product::all()->toArray();
+    }
 
-        public function product(): array
-        {
-            return Product::find(1)->toArray();
-        }
+    public function product(): array
+    {
+        return Product::find(1)->toArray();
+    }
 }
